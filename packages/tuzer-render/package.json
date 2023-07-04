@@ -1,0 +1,31 @@
+{
+  "name": "@skedo/render",
+  "version": "0.0.2",
+  "description": "",
+  "main": "es/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "@types/react": "^18.2.1",
+    "react": "^18.2.0",
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.3",
+    "css-loader": "^6.2.0"
+  },
+  "skedo": {
+    "type": "lib",
+    "devLinks": []
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.6.4",
+    "@babel/runtime": "^7.15.4",
+    "@types/react": "^18.2.1",
+    "@types/react-dom": "^18.2.1"
+  }
+}
