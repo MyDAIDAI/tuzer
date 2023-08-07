@@ -51,4 +51,21 @@ export class Package {
   public async npmInstall() {
     await this.exec("yarn install");
   }
+
+  /**
+   * 清除装包缓存
+   */
+  public async npmClear() {
+    await this.exec("rm -rf ./package-lock.json", true);
+    await this.exec("rm -rf  ./node_modules", true);
+  }
+
+  /**
+   * 清除包缓存后重新安装包
+   * 重新安装package.json包
+   */
+  public async reNpmInstall() {
+    await this.npmClear();
+    await this.npmInstall();
+  }
 }

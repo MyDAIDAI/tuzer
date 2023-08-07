@@ -14,6 +14,9 @@ class Packages {
     );
     this.packages = packages;
   }
+
+  public async reinstall() {}
+
   public install() {
     this.packages.forEach((pkg) => {
       pkg.npmInstall();
