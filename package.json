@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": ".../",
-    "reinstall": "ts-node ./scripts/bootstrap/bootstrap.ts reinstall"
+    "reinstall": "ts-node ./scripts/bootstrap/bootstrap.ts reinstall",
+    "dev": "ts-node ./scripts/bootstrap/bootstrap.ts dev"
   },
   "dependencies": {
     "chalk": "^4.1.1",
+    "child_process": "^1.0.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "figlet": "^1.5.0",

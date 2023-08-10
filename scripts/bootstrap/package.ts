@@ -3,10 +3,19 @@ import * as fs from "fs";
 import { runCmd } from "./cmdRunner";
 import chalk from "chalk";
 
+type TuzerProjectType = "service" | "app" | "lib" | "cli";
+
 interface IPackageJson {
   name: string;
   version: [number, number, number];
   main: string;
+  tuzer?: {
+    devLinks?: string[]; // 本地需要link的项目名称
+    type?: TuzerProjectType;
+    port?: number;
+    bootstrap?: string;
+    localInstall?: boolean;
+  };
   dependencies: {
     [dep: string]: string;
   };
@@ -22,6 +31,7 @@ export class Package {
   constructor(file: string, dir: string) {
     this.fullname = path.resolve(dir, file);
     const _json = this.parseJSON(fs.readFileSync(this.fullname, "utf-8"));
+    this.json = _json;
     this.dir = dir;
   }
 
@@ -67,5 +77,44 @@ export class Package {
   public async reNpmInstall() {
     await this.npmClear();
     await this.npmInstall();
+  }
+
+  /**
+   * 运行dev命令
+   */
+  public async startDev() {
+    switch (this.getTuzerType()) {
+      case "app":
+        await this.exec("npm run dev");
+        break;
+      default:
+        console.error(
+          chalk.red(`You cannot start an [${this.getTuzerType()}]`)
+        );
+    }
+  }
+  /**
+   * 获取项目名称
+   * 备注：以get开头的名称都是轻量级获取方法，不能进行大量计算
+   * @returns 项目配置名称
+   */
+  public getName(): string {
+    return this.json.name;
+  }
+
+  /**
+   * 获取项目版本号
+   * @returns 项目版本号
+   */
+  public getVersion(): [number, number, number] {
+    return this.json.version;
+  }
+
+  /**
+   * 获取项目类型
+   * @returns string
+   */
+  public getTuzerType(): TuzerProjectType {
+    return this.json.tuzer?.type;
   }
 }

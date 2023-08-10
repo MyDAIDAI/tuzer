@@ -22,6 +22,10 @@ class Packages {
       pkg.npmInstall();
     });
   }
+
+  public find(name: string): Package | null {
+    return this.packages.find((x) => x.getName() === name);
+  }
 }
 
 export default Packages;
