@@ -80,6 +80,26 @@ export class Package {
   }
 
   /**
+   * 执行 yarn link 命令
+   */
+  public async link() {
+    console.log(chalk.cyanBright(`link ${this.getName()}`));
+    if (this.getTuzerType() !== "cli") {
+      await this.exec("yarn unlink");
+      await this.exec("yarn link");
+    } else {
+      await this.exec("npm link --force");
+    }
+  }
+
+  public async linkDev() {
+    for (let devLink of this.getDevLinks()) {
+      console.log(chalk.cyanBright(`linkDev ${this.getName()}`));
+      await this.exec(`yarn link ${devLink}`);
+    }
+  }
+
+  /**
    * 运行dev命令
    */
   public async startDev() {
@@ -116,5 +136,13 @@ export class Package {
    */
   public getTuzerType(): TuzerProjectType {
     return this.json.tuzer?.type;
+  }
+
+  /**
+   * 获取所有需要link的包
+   * @returns string[]
+   */
+  public getDevLinks(): string[] {
+    return this.json.tuzer?.devLinks || [];
   }
 }

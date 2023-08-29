@@ -12,8 +12,8 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@skedo/request": "^0.0.2",
-        "@skedo/utils": "^0.0.2",
+        "@tuzer/request": "^0.0.2",
+        "@tuzer/utils": "^0.0.2",
         "@types/immutable": "^3.8.7",
         "@types/invariant": "^2.2.34",
         "@types/js-yaml": "^4.0.2",
@@ -35,7 +35,7 @@
         "react": "^18.2.0",
         "vue": "^3.2.45"
     },
-    "skedo": {
+    "tuzer": {
         "type": "lib",
         "devLinks": []
     }

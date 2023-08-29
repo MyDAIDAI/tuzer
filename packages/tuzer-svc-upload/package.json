@@ -56,11 +56,11 @@
     "eslintIgnore": [
         "coverage"
     ],
-    "skedo": {
+    "tuzer": {
         "type": "service",
         "port": 7001,
         "devLinks": [
-            "@skedo/svc-config"
+            "@tuzer/svc-config"
         ],
         "localInstall": true
     },

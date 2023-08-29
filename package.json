@@ -6,7 +6,8 @@
   "scripts": {
     "start": ".../",
     "reinstall": "ts-node ./scripts/bootstrap/bootstrap.ts reinstall",
-    "dev": "ts-node ./scripts/bootstrap/bootstrap.ts dev"
+    "dev": "ts-node ./scripts/bootstrap/bootstrap.ts dev",
+    "install-link": "ts-node ./scripts/bootstrap/bootstrap.ts install-link"
   },
   "dependencies": {
     "chalk": "^4.1.1",

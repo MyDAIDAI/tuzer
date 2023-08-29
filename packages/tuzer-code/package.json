@@ -1,0 +1,19 @@
+{
+  "name": "@tuzer/code",
+  "version": "1.0.0",
+  "main": "es/index.js",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "tuzer": {
+    "type": "lib",
+    "devLinks": [
+      "@tuzer/request"
+    ]
+  }
+}

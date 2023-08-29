@@ -14,12 +14,12 @@
     "devDependencies": {},
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "nodemon --watch './src/**/*.ts' --watch '../../skedo-code/src' --exec ts-node src/index.ts",
+        "dev": "nodemon --watch './src/**/*.ts' --watch '../../tuzer-code/src' --exec ts-node src/index.ts",
         "serve": "cross-env NODE_ENV=production nodemon"
     },
     "author": "",
     "license": "ISC",
-    "skedo": {
+    "tuzer": {
         "type": "service",
         "port": "7004",
         "devLinks": []

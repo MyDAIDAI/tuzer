@@ -6,7 +6,6 @@ import { Package } from "./package";
 function* walk(pattern: RegExp, dir: string, exclude: RegExp): Generator<any> {
   const files = fs.readdirSync(dir);
   for (let i = 0; i < files.length; i++) {
-    loadProjects;
     const file = files[i];
     const fullname = path.resolve(dir, file);
     if (fullname.match(exclude)) {

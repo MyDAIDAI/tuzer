@@ -19,7 +19,7 @@
         "node-fetch": "2",
         "nodemon": "^2.0.10"
     },
-    "skedo": {
+    "tuzer": {
         "type": "service",
         "port": 7005,
         "devLinks": []

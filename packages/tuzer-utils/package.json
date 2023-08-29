@@ -1,0 +1,23 @@
+{
+  "name": "@tuzer/utils",
+  "version": "1.0.0",
+  "main": "es/index.js",
+  "license": "MIT",
+  "description": "",
+  "peerDependencies": {
+    "rxjs": "^7.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "tuzer": {
+    "type": "lib"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.15.4"
+  }
+}

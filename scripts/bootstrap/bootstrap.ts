@@ -36,6 +36,10 @@ async function run() {
       //   break;
       // }
       pkg.startDev();
+      break;
+    case "install-link":
+      projects.installLinks();
+      break;
   }
 }
 run();

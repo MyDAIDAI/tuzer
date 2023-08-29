@@ -10,7 +10,7 @@
     },
     "author": "",
     "license": "ISC",
-    "skedo": {
+    "tuzer": {
         "type": "lib",
         "devLinks": []
     }
