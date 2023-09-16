@@ -18,6 +18,20 @@ class Packages {
       (pkg) =>
         ["service", "app", "lib", "cli"].indexOf(pkg.getTuzerType()) !== -1
     );
+    this.loadMarks();
+  }
+
+  public loadMarks() {
+    try {
+      const content = fs.readFileSync(
+        path.resolve(__dirname, "../../.tuzer"),
+        "utf-8"
+      );
+      const json = JSON.parse(content);
+      this.marks = json;
+    } catch (error) {
+      this.marks = {};
+    }
   }
 
   public async reinstall() {}
@@ -52,6 +66,7 @@ class Packages {
       pkg.linkDev();
     }
     this.marks["linked"] = true;
+    this.saveMark();
   }
 
   public saveMark() {
